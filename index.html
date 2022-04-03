@@ -6,7 +6,7 @@ title: Home
 {% for post in site.posts %}
 <ul>
   <li>
-    <a href="{{ post.url }}">
+    <a href="{{ site.baseurl }}{{ post.url }}">
       {{ post.title }}
     </a>
     <span>{{ post.date | date: "%Y-%m-%d" }}</span>
