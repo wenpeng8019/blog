@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    {{ page.title }}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/normalize.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/sidebar.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>
+  <style>
+    #mindmap {
+      display: block;
+      width: 100%;
+      height: 100vh;
+    }
+    .content.container {
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+{% include sidebar.html %}
+
+<div class="content container">
+  <svg id="mindmap"></svg>
+</div>
+
+<div style="display: none" id="mind-data"> {{ content }} </div>
+<script>
+    let r = {t:'root', d:0, v:''}, es = window.document.getElementById('mind-data').children, h = ['H0'], s = [r], i, n, d, t, v, e;
+    for(i=d=0, n=es.length; i<n; ++i) { t = (e=es[i]).tagName;
+      if (t[0] !== 'H') continue;
+      if (t > (v=h[d])) {
+        (s[d].c || (s[d].c = [])).push(v = {t:'heading', d:++d, v:e.innerText});
+        h.push(t); s.push(v);
+      }
+      else {
+        while (t < v) { h.pop(); s.pop(); v=h[--d]; }
+        if (t > v) h[d] = t;
+        (s[v=d-1].c || (s[v].c = [])).push(s[d] = {t:'heading', d:d, v:e.innerText});
+      }
+    }
+
+    ((c,d,p)=>{
+      const{Markmap:g}=c();
+      window.mm=g.create("svg#mindmap",d==null?void 0:d(),p)
+    })
+    (() => window.markmap,
+     c => (c=c||window.d3, {color:(N=>E=>N(E.p.i))(c.scaleOrdinal(c.schemeCategory10))}),
+     r)
+</script>
+
+</body>
+</html>
