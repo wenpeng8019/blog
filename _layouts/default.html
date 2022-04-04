@@ -20,10 +20,12 @@
   </style>
   <body class="markdown-body">
 
+  {% include sidebar.html %}
+
+  <div class="content container">
   {{ content }}
+  </div>
 
   </body>
-  <script>
-    mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-  </script>
+  {% include init.html %}
 </html>

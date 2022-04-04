@@ -1,5 +1,13 @@
+
+# 配置
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
     disable : true
 highlighter: none
+
+
+# 自定义变量
+title:            WENp
+description:      '自说自话的唯心论'
+

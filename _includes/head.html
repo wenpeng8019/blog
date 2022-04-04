@@ -11,8 +11,23 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/github-markdown-light.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/sidebar.css">
+
+  <!-- highlight（Rouge） -->
+<!--  <link href="{{ site.baseurl }}/assets/highlight.css" rel="stylesheet" />-->
+
+  <!-- highlight（highlight.js） -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- highlight（prism.js） -->
+<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css">-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.min.js"></script>-->
+
 
   <!-- MathJax -->
+  {% if page.math %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -22,30 +37,21 @@
   }
   });
   </script>
-
-  <!-- highlight（Rouge） -->
-<!--  <link href="{{ site.baseurl }}/assets/highlight.css" rel="stylesheet" />-->
-  <!-- highlight（highlight.js） -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <!-- highlight（prism.js） -->
-<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css">-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.min.js"></script>-->
-
+  {% endif %}
 
   <!-- mermaid -->
+  {% if page.mermaid %}
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>
-    var config = {
-      startOnLoad: true,
+    mermaid.initialize({
+      //startOnLoad: true,
       //theme: "forest",
       flowchart:{
         useMaxWidth: true,
         htmlLabels: true
       }
-    };
-    mermaid.initialize(config);
+    });
   </script>
+  {% endif %}
 
 </head>

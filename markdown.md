@@ -1,15 +1,17 @@
 ---
 layout: default
-title: Hello Blog
+title: Markdown
+math: true
 mermaid: true
 ---
 
-# hello
+# markdown 语法
 
-### this is my blog
+##### 几个"官方组织"
 
+- [https://commonmark.org/](https://commonmark.org/)
+- [https://www.markdownguide.org/](https://www.markdownguide.org/)
 
-# Markdown Format
 
 ### 标题
 
@@ -19,13 +21,6 @@ mermaid: true
 - \####
 - \#####
 - \######
-
-实际使用的建议
-
-* \# 和 \## 可以作为 header 标题。很多主题会将这两个级别的标题居中显示。
-* \### 和 \#### 可以用于 navigation 分类导航
-* \##### 和 \###### 可以作为阐述过程中的具体 condition
-
 
 
 ### 文本修饰
@@ -44,7 +39,7 @@ mermaid: true
 
 - 链接: \[标题](http://...)
 - 图片: \!\[标题](http://...)
-- 分割线: \--- | \*** (三个以上的 '-' 或 '*' )
+- 分割线: \--- 或 \*** (三个以上的 '-' 或 '*' )
 
 ### 引用
 
@@ -91,9 +86,9 @@ mermaid: true
 
 ### 数学
 
-$$$
+$$
 x = {-b \pm \sqrt{b^2-4ac} \over 2a}
-$$$
+$$
 
 ### 代码
 
@@ -101,18 +96,38 @@ $$$
 code
 \`\`\`
 
-```javascript
-var a;
-a = 1;
-```
+### 图表
 
-### 流程图
-
-\`\`\`flow
+\`\`\`graph-plugin-name
 code
 \`\`\`
 
-流程图本质上是代码的一种
+图表本质上是代码的一种
+
+#### mermaid 图
+
+官网: [mermaid](https://mermaid-js.github.io/mermaid/)
+
+示例：
+```
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+`` `
+```
+效果:
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+#### Flow 图
 
 ##### 示例
 
@@ -138,18 +153,6 @@ e=>end
 st->op->cond
 cond(yes)->e
 cond(no)->op
-```
-
-### mermaid 图
-
-https://mermaid-js.github.io/mermaid/
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
 ```
 
 ### 表格
