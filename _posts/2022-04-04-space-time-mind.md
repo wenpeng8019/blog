@@ -1,5 +1,7 @@
 ---
 layout: mind
+title: 时空脑图
+date:   2022-04-04
 ---
 
 # 关于时间
