@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 素数规律手稿
-date:   2022-04-16
+date:   2022-04-12
 math: false
 mermaid: false
 tags:

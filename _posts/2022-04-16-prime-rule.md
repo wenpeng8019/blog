@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 素数的规律
-date:   2022-04-12
+date:   2022-04-16
 math: true
 tags:
 - 素数
