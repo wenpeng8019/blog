@@ -12,9 +12,8 @@ title: Raphael
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="utf-8">
 <head>
-    <meta charset="utf-8">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"> </script>
 </head>
 <body></body>
