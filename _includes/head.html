@@ -26,7 +26,6 @@
 <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css">-->
 <!--  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.min.js"></script>-->
 
-
   <!-- MathJax -->
   {% if page.math %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
@@ -54,6 +53,13 @@
     });
   </script>
   {% endif %}
+
+  <!-- raphael -->
+  {% if page.raphael %}
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  {% endif %}
+
+  <script src="{{ site.baseurl }}/assets/md-widget.js"></script>
 
   <!-- btree -->
   {% if page.btree %}
