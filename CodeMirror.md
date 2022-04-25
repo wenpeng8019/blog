@@ -59,6 +59,7 @@ title: CodeMirror
 
 ##### 基本使用
 
+* 通过 `<script>` + `mode/../...js`  的方式来设置代码编辑器的语言
 * `CodeMirror()` 第一参数 `document.body` 可以是一个自定义的 DOM Element。一般会自定义指定一个 DIV 元素。
 * `value` 用于设置编辑器的初始内容。
 * `lineNumbers` 使得代码编辑器可以显示行号。行号是代码编辑器的一个显要的特征。
