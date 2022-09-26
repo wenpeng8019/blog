@@ -54,10 +54,16 @@ math: true
 
 ### git 的几个概念：
 
-* HEAD/Index
+* HEAD/Index/stash
 * reset/revert
-* amend
-* merge/rebase/cherry-pick
+  * reset 用于回退 commit 版本。然而，从 git 内部机制上讲，reset 的本意应该是重置 commit 版本基态。
+  * revert 的思想，也得从 git 的内部机制上理解。上面提到，commit 序列实际上是由多个并行的版本分段融合而成的。这就是说，每一个平行的版本序列，都可以看成是一个逻辑上的 branch。而 revert 就是将指定的（过往某个）版本（序列），和当前（应用）的版本（序列），进行 merge 处理。
+* merge/cherry-pick
+  * 相比于 merge，cherry-pick 是将另一个 branch 的指定部分 commit，合并到当前分支。
+* amend/squash/rebase
+  * amend 用于遗漏提交。很多时候，我们在 commit 后，会发现遗漏些什么。再次提交又会产生新的 commit 版本，这显然很累赘。amend 可以让我们在上次 commit 的基础上执行补充提交。amend 既可以补充提交某些数据变更，也可以只提交 commit message。注意，补充提交会导致之前的 commit id 发生变更。事实上，amend 提交是创建一个新的 commit，同时将上一个 commit “删除”。
+  * squash 用于将历史多个 commit 合并成一个 commit。
+  * rebase
 
 
 
