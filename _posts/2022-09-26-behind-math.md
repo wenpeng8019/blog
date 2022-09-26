@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 数学的背后
+title: behind math
 date:  2022-09-26
 math: false
 mermaid: false
