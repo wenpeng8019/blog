@@ -86,9 +86,6 @@ math: true
 # 配置当前 proj 的提交身份。配置文件位于 .git/
 git config user.name "Your Name Here"
 git config user.email your@email.com
-```
-
-```sh
 # 配置全局的提交身份。配置文件位于 ~/.gitconfig
 git config --global user.name "Your Name Here"
 git config --global user.email your@email.com
