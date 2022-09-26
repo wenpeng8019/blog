@@ -3,6 +3,9 @@ layout: default
 title: Git
 math: true
 ---
+
+> 参考：https://git-scm.com/book/zh/v2
+
 ### git 的结构和机制
 
 * git 是一个库，它的实体存在就是 proj 目录下的一个 .git 子目录。根据 linux 的文件系统规范，这是一个隐藏目录。
