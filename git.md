@@ -68,14 +68,12 @@ math: true
 * fetch/FETCH_HEAD
 
   对于远程 git 库来说，我们最基本的应用就是同步和备份。因此，一个具有一致性的 branch 就足够了。然而，git 作为一个分布式库系统，远程的 git 库其实和本地 git 库是一样的，也是可以构建多个 branch 的。这就为远程 git 库的应用，提供了更丰富的场景。
-
   * fetch 就是用来获取远程（指定）branch 的工具。注意，fetch 得到的是 git 的 branch，即 .git/ 目录下的某个（branch 对象）子目录，而不是具体的数据文件。fetch 得到的 branch 和本地创建的 branch 是一样的，都可以通过 merge 来合并到自己的某个本地分支中。相比于 pull，可以将 pull 简单的看成是 fetch (master) + merge (master)
-
-  * FETCH_HEAD 和上面的 HEAD 一样，也是一个指针。但它的时效性很短，只有在执行 fetch 命令后可用。用于指向新获取的远程 branch 的最后一个提交版本。利用它，我们可以将新获取的 branch 和本地 branch 进行合并。例如：
-    
-    `git fetch origin xx && git merge FETCH_HEAD`
-    
-    事实上，pull 命令就是这么做的。
+  * FETCH_HEAD 和上面的 HEAD 一样，也是一个指针。如果一个 branch 是从远程 fetch 得到的，那么 FETCH_HEAD 就用来指向该远程  branch 的最后一个 commit 版本。利用它，我们可以将新获取的 branch 和本地 branch 进行合并。
+  
+    例如：`git fetch origin xx && git merge FETCH_HEAD`  事实上，pull 命令就是这么做的。
+  
+  * 注意：远程 branch 和本地 branch 是有 “严格”区分的。我们无法把远程 branch 直接作为本地 branch 使用。git 的方案是，在本地创建一个新的 branch，然后将远程 branch 的数据，merge 到本地新创建的 branch 中。同样的，clone 命令就是这么做的。
 * reset/revert
   * reset 用于回退 commit 版本。然而，从 git 内部机制上讲，reset 的本意应该是重置 commit 版本基态。
   * revert 的思想，也得从 git 的内部机制上理解。上面提到，commit 序列实际上是由多个并行的版本分段融合而成的。这就是说，每一个平行的版本序列，都可以看成是一个逻辑上的 branch。而 revert 就是将指定的（过往某个）版本（序列），和当前（应用）的版本（序列），进行 merge 处理。
