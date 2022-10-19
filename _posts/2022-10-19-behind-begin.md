@@ -2,7 +2,7 @@
 layout: default
 title: 起源
 date:   2022-10-19
-math: false
+math: true
 mermaid: false
 tags:
 - 
